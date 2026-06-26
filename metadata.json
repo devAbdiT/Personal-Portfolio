@@ -1,0 +1,6 @@
+{
+  "name": "Spatial Portfolio",
+  "description": "A sleek 3D spatial personal portfolio website with dark tech-driven aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
