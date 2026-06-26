@@ -10,6 +10,7 @@ export function Projects() {
       description: "A modern dashboard application built with Next.js 14, following the official Next.js tutorial. Features responsive design and high performance.",
       tags: ["Next.js", "TypeScript", "Tailwind"],
       repo: "https://github.com/devAbdiT/DashBoard",
+      demo: "https://dash-board-rose.vercel.app/",
       image: "bg-gradient-to-br from-primary-900 via-slate-800 to-slate-950"
     },
     {
@@ -18,6 +19,7 @@ export function Projects() {
       description: "Dynamic React e-commerce application featuring a robust product catalog with advanced filtering and real-time search.",
       tags: ["React", "TypeScript", "Tailwind"],
       repo: "https://github.com/devAbdiT/Lumina-Shop",
+      demo: "https://lumina-shop-wine.vercel.app/",
       image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900"
     },
     {
@@ -26,6 +28,7 @@ export function Projects() {
       description: "A modern Patient Management System designed for efficient healthcare administration and workflow.",
       tags: ["TypeScript", "React", "Node.js"],
       repo: "https://github.com/devAbdiT/MediCare",
+      demo: "https://medi-care-tan-seven.vercel.app/",
       image: "bg-gradient-to-b from-slate-800 via-slate-900 to-primary-950"
     },
     {
@@ -34,6 +37,7 @@ export function Projects() {
       description: "A developer-focused platform intended to unblock developer collaboration and knowledge sharing.",
       tags: ["TypeScript", "Next.js", "Tailwind"],
       repo: "https://github.com/devAbdiT/DevFlow",
+      demo: "",
       image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900"
     },
     {
@@ -42,6 +46,7 @@ export function Projects() {
       description: "A responsive informational website structured for educational institutions.",
       tags: ["JavaScript", "HTML", "CSS"],
       repo: "https://github.com/devAbdiT/Simple-College-website",
+      demo: "https://simple-college-website-seven.vercel.app/",
       image: "bg-gradient-to-r from-primary-950 via-secondary-900 to-slate-900"
     },
     {
@@ -50,6 +55,7 @@ export function Projects() {
       description: "A fun and interactive classic dice game built beautifully with pure web properties.",
       tags: ["CSS", "JavaScript", "HTML"],
       repo: "https://github.com/devAbdiT/Dice-game",
+      demo: "https://joyful-hotteok-3a466c.netlify.app/",
       image: "bg-gradient-to-br from-slate-900 via-slate-800 to-secondary-950"
     }
   ];
@@ -144,12 +150,17 @@ export function Projects() {
 
                       {/* Links */}
                       <div 
-                        className="flex justify-between items-center pt-4 border-t border-slate-700/50"
-                        style={{ transform: "translateZ(50px)" }}
+                        className="flex justify-between items-center gap-4 pt-4 border-t border-slate-700/50"
+                        style={{ transform: "translateZ(10px)" }}
                       >
                         <a href={project.repo} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors flex items-center gap-1 text-sm font-medium">
                           <Github size={16} /> Repository
                         </a>
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-secondary-400 transition-colors flex items-center gap-1 text-sm font-medium">
+                            <ExternalLink size={16} /> Live Demo
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
