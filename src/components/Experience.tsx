@@ -29,7 +29,7 @@ export function Experience() {
     <section id="experience" className="min-h-screen py-24 px-6 relative">
       <div className="max-w-4xl mx-auto w-full">
         <h2 className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 mb-20 text-center sm:text-left">
-          Temporal Log
+          Experience & Education
         </h2>
 
         {/* 3D Depth-aware timeline container */}

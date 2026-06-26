@@ -6,7 +6,7 @@ export function Contact() {
       <div className="max-w-2xl mx-auto w-full flex flex-col items-center text-center perspective-1000">
 
         <h2 className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary-400 to-secondary-500 mb-4">
-          Establish Connection
+          Let's Connect
         </h2>
         <p className="text-slate-400 text-lg max-w-xl mb-12">
           Looking to collaborate on spatial experiences, modern web infrastructures, or boundary-pushing digital constructs?

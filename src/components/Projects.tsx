@@ -92,7 +92,7 @@ export function Projects() {
         >
           <motion.div variants={itemVariants} className="mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 mb-4">
-              Spatial Constructs
+              Featured Projects
             </h2>
             <p className="text-slate-400 font-mono text-sm uppercase tracking-widest pl-1 border-l-2 border-primary-500">
               Selected Works
