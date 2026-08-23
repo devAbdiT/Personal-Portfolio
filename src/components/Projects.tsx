@@ -41,15 +41,6 @@ export function Projects() {
       image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900"
     },
     {
-      id: 5,
-      title: "Simple College Website",
-      description: "A responsive informational website structured for educational institutions.",
-      tags: ["JavaScript", "HTML", "CSS"],
-      repo: "https://github.com/devAbdiT/Simple-College-website",
-      demo: "https://simple-college-website-seven.vercel.app/",
-      image: "bg-gradient-to-r from-primary-950 via-secondary-900 to-slate-900"
-    },
-    {
       id: 6,
       title: "Dice Game",
       description: "A fun and interactive classic dice game built beautifully with pure web properties.",
