@@ -1,6 +1,13 @@
 import { Code2, Database, Layout, Terminal } from 'lucide-react';
 import { motion } from 'motion/react';
 import { TiltCard } from './TiltCard';
+import { 
+  SiReact, SiNextdotjs, SiJavascript, SiTailwindcss, 
+  SiShadcnui, SiReacthookform, SiSocketdotio, SiPostgresql, SiMongodb, 
+  SiMysql, SiCplusplus, SiGithub 
+} from 'react-icons/si';
+import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { VscVscode } from 'react-icons/vsc';
 
 export function Skills() {
   const skillGroups = [
@@ -9,28 +16,49 @@ export function Skills() {
       icon: Layout,
       color: "text-primary-400",
       glow: "rgba(var(--primary-glow), 0.5)",
-      skills: ['React', 'Next.js', 'JavaScript', 'Tailwind', 'HTML', 'CSS']
+      skills: [
+        { name: 'React', icon: SiReact },
+        { name: 'Next.js', icon: SiNextdotjs },
+        { name: 'JavaScript', icon: SiJavascript },
+        { name: 'Tailwind', icon: SiTailwindcss },
+        { name: 'HTML', icon: FaHtml5 },
+        { name: 'CSS', icon: FaCss3Alt },
+        { name: 'shadcn', icon: SiShadcnui },
+        { name: 'React Hook Form', icon: SiReacthookform },
+        { name: 'Socket.io', icon: SiSocketdotio }
+      ]
     },
     {
       title: "Databases",
       icon: Database,
       color: "text-secondary-400",
       glow: "rgba(var(--secondary-glow), 0.5)",
-      skills: ['PostgreSQL', 'MongoDB', 'MySQL']
+      skills: [
+        { name: 'PostgreSQL', icon: SiPostgresql },
+        { name: 'MongoDB', icon: SiMongodb },
+        { name: 'MySQL', icon: SiMysql }
+      ]
     },
     {
       title: "Languages",
       icon: Code2,
       color: "text-emerald-400",
       glow: "rgba(52, 211, 153, 0.5)",
-      skills: ['Java', 'C++', 'JavaScript']
+      skills: [
+        { name: 'Java', icon: FaJava },
+        { name: 'C++', icon: SiCplusplus },
+        { name: 'JavaScript', icon: SiJavascript }
+      ]
     },
     {
       title: "Development Tools",
       icon: Terminal,
       color: "text-purple-400",
       glow: "rgba(192, 132, 252, 0.5)",
-      skills: ['GitHub', 'VS Code']
+      skills: [
+        { name: 'GitHub', icon: SiGithub },
+        { name: 'VS Code', icon: VscVscode }
+      ]
     }
   ];
 
@@ -88,10 +116,12 @@ export function Skills() {
                   <div className="flex flex-wrap gap-2 mt-auto" style={{ transform: "translateZ(20px)" }}>
                     {group.skills.map(skill => (
                       <span 
-                        key={skill} 
-                        className="px-3 py-1.5 text-xs font-mono text-slate-300 bg-slate-950/50 border border-white/10 rounded-md hover:text-primary-300 hover:border-primary-500/50 transition-colors"
+                        key={skill.name} 
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-slate-300 bg-slate-950/50 border border-white/10 rounded-md hover:text-primary-300 hover:border-primary-500/50 transition-colors"
                       >
-                        {skill}
+                        {/* @ts-ignore - className is valid for react-icons */}
+                        <skill.icon className="w-3.5 h-3.5" />
+                        {skill.name}
                       </span>
                     ))}
                   </div>
