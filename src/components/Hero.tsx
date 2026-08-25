@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { WireframeGlobe } from './WireframeGlobe';
 import { useEffect } from 'react';
+import { Download } from 'lucide-react';
 
 export function Hero() {
   const mouseX = useMotionValue(0);
@@ -76,7 +77,7 @@ export function Hero() {
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Passionate Frontend Engineer crafting modern, responsive web experiences with React and Next.js. I focus on writing clean, elegant code to translate complex requirements into seamless and performant user interfaces.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <motion.a 
                   href="#projects"
                   whileHover={{ scale: 1.05 }}
@@ -93,6 +94,15 @@ export function Hero() {
                   className="inline-flex items-center justify-center px-6 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-slate-100 font-medium rounded-lg transition-colors"
                 >
                   GitHub
+                </motion.a>
+                <motion.a 
+                  href="/resume.pdf"
+                  target="_blank" rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-slate-100 font-medium rounded-lg transition-colors"
+                >
+                  <Download size={16} /> Resume
                 </motion.a>
               </div>
             </motion.div>

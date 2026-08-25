@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, ArrowRight } from 'lucide-react';
+import { Briefcase, GraduationCap, ArrowRight, Download } from 'lucide-react';
 
 export function Experience() {
   const experiences = [
@@ -70,7 +70,7 @@ export function Experience() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-16 relative z-10">
+          <div className="flex flex-wrap justify-center gap-4 mt-16 relative z-10">
             <a 
               href="https://www.linkedin.com/in/abdi-tadesse-914a33372/" 
               target="_blank" 
@@ -79,6 +79,15 @@ export function Experience() {
             >
               View Full History 
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-slate-900 border border-secondary-500/50 text-secondary-400 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-secondary-950/30 hover:shadow-[0_0_20px_rgba(var(--secondary-glow),0.4)] transition-all group"
+            >
+              <Download size={16} className="group-hover:-translate-y-0.5 transition-transform" />
+              Download Resume 
             </a>
           </div>
 
