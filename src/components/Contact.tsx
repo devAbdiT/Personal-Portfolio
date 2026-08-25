@@ -1,6 +1,15 @@
-import { Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Check, Copy } from 'lucide-react';
+import { useState } from 'react';
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('abditadesse89@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section id="contact" className="min-h-screen py-24 px-6 relative flex items-center justify-center">
       <div className="max-w-2xl mx-auto w-full flex flex-col items-center text-center perspective-1000">
@@ -15,18 +24,31 @@ export function Contact() {
         {/* Contact Info Card */}
         <div className="w-full bg-slate-900/60 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-white/5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col gap-6">
 
-          <a
-            href="mailto:abditadesse89@gmail.com"
-            className="group flex items-center gap-4 p-4 rounded-2xl bg-slate-950/50 border border-slate-800 hover:border-primary-500/50 transition-colors duration-300"
+          <button
+            onClick={handleCopyEmail}
+            className="group w-full flex items-center justify-between p-4 rounded-2xl bg-slate-950/50 border border-slate-800 hover:border-primary-500/50 transition-colors duration-300 cursor-pointer"
           >
-            <div className="w-11 h-11 shrink-0 rounded-xl bg-slate-800/80 border border-primary-500/30 flex items-center justify-center text-primary-400 group-hover:shadow-[0_0_15px_rgba(var(--primary-glow),0.4)] transition-shadow">
-              <Mail size={20} strokeWidth={1.5} />
+            <div className="flex items-center gap-4">
+              <div className="w-11 h-11 shrink-0 rounded-xl bg-slate-800/80 border border-primary-500/30 flex items-center justify-center text-primary-400 group-hover:shadow-[0_0_15px_rgba(var(--primary-glow),0.4)] transition-shadow">
+                <Mail size={20} strokeWidth={1.5} />
+              </div>
+              <div className="text-left">
+                <p className="text-[11px] uppercase font-mono tracking-widest text-slate-500">Email</p>
+                <p className="text-slate-200 group-hover:text-primary-300 transition-colors">abditadesse89@gmail.com</p>
+              </div>
             </div>
-            <div className="text-left">
-              <p className="text-[11px] uppercase font-mono tracking-widest text-slate-500">Email</p>
-              <p className="text-slate-200 group-hover:text-primary-300 transition-colors">abditadesse89@gmail.com</p>
+            <div>
+              {copied ? (
+                <span className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2.5 py-1.5 rounded-lg border border-emerald-400/20">
+                  <Check size={14} /> Copied!
+                </span>
+              ) : (
+                <span className="flex items-center gap-1.5 text-xs font-mono text-slate-400 group-hover:text-primary-400 transition-colors opacity-0 group-hover:opacity-100 px-2.5 py-1.5">
+                  <Copy size={14} /> Copy
+                </span>
+              )}
             </div>
-          </a>
+          </button>
 
           <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-950/50 border border-slate-800">
             <div className="w-11 h-11 shrink-0 rounded-xl bg-slate-800/80 border border-secondary-500/30 flex items-center justify-center text-secondary-400">
