@@ -87,15 +87,6 @@ export function Hero() {
                   View Work
                 </motion.a>
                 <motion.a 
-                  href="https://github.com/devAbdiT/"
-                  target="_blank" rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center justify-center px-6 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-slate-100 font-medium rounded-lg transition-colors"
-                >
-                  GitHub
-                </motion.a>
-                <motion.a 
                   href="/resume.pdf"
                   target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
