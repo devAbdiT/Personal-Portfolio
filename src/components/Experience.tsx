@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, ArrowRight, Download } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export function Experience() {
   const experiences = [
@@ -25,12 +26,34 @@ export function Experience() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="experience" className="min-h-screen py-24 px-6 relative">
       <div className="max-w-4xl mx-auto w-full">
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 mb-20 text-center sm:text-left">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 mb-20 text-center sm:text-left"
+        >
           Experience & Education
-        </h2>
+        </motion.h2>
 
         {/* 3D Depth-aware timeline container */}
         <div className="relative perspective-1000">
@@ -38,9 +61,16 @@ export function Experience() {
           {/* Vertical Glowing Line */}
           <div className="absolute left-[23px] sm:left-1/2 top-0 bottom-0 w-[2px] sm:-translate-x-1/2 bg-gradient-to-b from-primary-500/0 via-primary-500/50 to-secondary-500/0 shadow-[0_0_15px_rgba(var(--primary-glow),0.5)]" />
 
-          <div className="space-y-16">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="space-y-16"
+          >
             {experiences.map((exp, idx) => (
-              <div 
+              <motion.div 
+                variants={itemVariants}
                 key={idx} 
                 className={`relative flex flex-col sm:flex-row items-center gap-8 group ${idx % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
               >
@@ -66,9 +96,9 @@ export function Experience() {
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="flex flex-wrap justify-center gap-4 mt-16 relative z-10">
             <a 

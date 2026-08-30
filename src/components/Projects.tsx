@@ -63,12 +63,11 @@ export function Projects() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50, rotateX: -20 },
+    hidden: { opacity: 0, y: 50 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      rotateX: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
@@ -79,7 +78,6 @@ export function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-500 mb-4">
@@ -90,7 +88,7 @@ export function Projects() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
+          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-1000">
             {projects.map((project) => (
               <motion.div variants={itemVariants} key={project.id} className="h-full">
                 <TiltCard className="h-full">
@@ -158,7 +156,7 @@ export function Projects() {
                 </TiltCard>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
