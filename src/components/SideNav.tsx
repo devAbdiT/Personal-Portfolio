@@ -28,6 +28,21 @@ export function SideNav() {
           </li>
         ))}
       </ul>
+      
+      <div className="mt-8 flex flex-col items-center gap-2 text-slate-500/50">
+        <div className="flex flex-col items-center gap-1 group relative">
+          <div className="px-1.5 py-0.5 rounded border border-slate-700 bg-slate-800/50 text-[10px] font-mono leading-none shadow-sm">
+            ↑
+          </div>
+          <div className="px-1.5 py-0.5 rounded border border-slate-700 bg-slate-800/50 text-[10px] font-mono leading-none shadow-sm">
+            ↓
+          </div>
+          
+          <div className="absolute left-8 top-1/2 -translate-y-1/2 px-2 py-1 bg-slate-800 text-xs font-mono text-slate-50 rounded opacity-0 translate-x-2 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 border border-slate-700 whitespace-nowrap">
+            Navigate
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }

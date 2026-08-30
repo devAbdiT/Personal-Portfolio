@@ -9,10 +9,12 @@ import { Contact } from './components/Contact';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { Cursor } from './components/Cursor';
 import { ScrollProgress } from './components/ScrollProgress';
+import { KeyboardNavigation } from './components/KeyboardNavigation';
 
 export default function App() {
   return (
     <>
+      <KeyboardNavigation />
       <ScrollProgress />
       <Cursor />
       <Background />
