@@ -8,10 +8,12 @@ import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { Cursor } from './components/Cursor';
+import { ScrollProgress } from './components/ScrollProgress';
 
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Cursor />
       <Background />
       <SideNav />

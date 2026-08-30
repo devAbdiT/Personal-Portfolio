@@ -133,6 +133,12 @@ html {
 
 body {
   @apply bg-transparent text-slate-200 overflow-x-hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Custom reverse spin for orbital icons */
