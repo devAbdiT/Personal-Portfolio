@@ -10,10 +10,12 @@ import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { Cursor } from './components/Cursor';
 import { ScrollProgress } from './components/ScrollProgress';
 import { KeyboardNavigation } from './components/KeyboardNavigation';
+import { TerminalOverlay } from './components/TerminalOverlay';
 
 export default function App() {
   return (
     <>
+      <TerminalOverlay />
       <KeyboardNavigation />
       <ScrollProgress />
       <Cursor />

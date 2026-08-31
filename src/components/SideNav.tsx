@@ -42,6 +42,17 @@ export function SideNav() {
             Navigate
           </div>
         </div>
+
+        {/* Terminal Hint */}
+        <div className="mt-2 flex flex-col items-center gap-1 group relative">
+          <div className="px-1.5 py-0.5 rounded border border-slate-700 bg-slate-800/50 text-[10px] font-mono leading-none shadow-sm">
+            ~
+          </div>
+          
+          <div className="absolute left-8 top-1/2 -translate-y-1/2 px-2 py-1 bg-slate-800 text-xs font-mono text-slate-50 rounded opacity-0 translate-x-2 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 border border-slate-700 whitespace-nowrap">
+            Terminal
+          </div>
+        </div>
       </div>
     </nav>
   );
