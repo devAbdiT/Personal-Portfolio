@@ -5,10 +5,17 @@ export function Experience() {
   const experiences = [
     {
       type: 'work',
-      title: "Frontend Engineer",
-      organization: "Personal Projects & Freelance",
-      date: "Present",
-      description: "Developing robust data-driven interfaces, responsive dashboards, and modern end-to-end web applications."
+      title: "Software Engineering Student",
+      organization: "Jimma University",
+      date: "Present (3rd Year)",
+      description: "Dedicated student with a strong focus on frontend web development, currently expanding skill set into backend development."
+    },
+    {
+      type: 'edu',
+      title: "BSc in Software Engineering",
+      organization: "Jimma University, Ethiopia",
+      date: "Expected 2027/28",
+      description: "Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming (Java/C++), Database Management Systems, Web Programming."
     },
     {
       type: 'edu',
@@ -16,13 +23,6 @@ export function Experience() {
       organization: "ALX Africa",
       date: "Completed",
       description: "Successfully completed rigorous professional training in Frontend Development, specializing in React, Next.js, and modern architectural practices."
-    },
-    {
-      type: 'edu',
-      title: "Undergraduate Student",
-      organization: "University",
-      date: "Present",
-      description: "Pursuing higher education while actively translating academic theory into real-world software engineering practice."
     }
   ];
 

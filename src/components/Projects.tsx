@@ -6,48 +6,57 @@ export function Projects() {
   const projects = [
     {
       id: 1,
-      title: "DashBoard",
-      description: "A modern dashboard application built with Next.js 14, following the official Next.js tutorial. Features responsive design and high performance.",
-      tags: ["Next.js", "TypeScript", "Tailwind"],
-      repo: "https://github.com/devAbdiT/DashBoard",
-      demo: "https://dash-board-rose.vercel.app/",
-      image: "bg-gradient-to-br from-primary-900 via-slate-800 to-slate-950"
-    },
-    {
-      id: 2,
-      title: "Lumina-Shop",
-      description: "Dynamic React e-commerce application featuring a robust product catalog with advanced filtering and real-time search.",
-      tags: ["React", "TypeScript", "Tailwind"],
-      repo: "https://github.com/devAbdiT/Lumina-Shop",
-      demo: "https://lumina-shop-wine.vercel.app/",
-      image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900"
-    },
-    {
-      id: 3,
-      title: "MediCare",
-      description: "A modern Patient Management System designed for efficient healthcare administration and workflow.",
-      tags: ["TypeScript", "React", "Node.js"],
+      title: "Appointment Scheduling System",
+      description: "Full-stack web application digitizing hospital appointment booking with real-time doctor availability, role-based access, and queue management.",
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
       repo: "https://github.com/devAbdiT/MediCare",
       demo: "https://medi-care-tan-seven.vercel.app/",
       image: "bg-gradient-to-b from-slate-800 via-slate-900 to-primary-950"
     },
     {
-      id: 4,
-      title: "DevFlow",
-      description: "A developer-focused platform intended to unblock developer collaboration and knowledge sharing.",
-      tags: ["TypeScript", "Next.js", "Tailwind"],
+      id: 2,
+      title: "DevOverflow (StackOverflow Clone)",
+      description: "A full-stack Q&A platform for developers to ask questions, share answers, and engage in technical discussions with upvoting and bookmarking.",
+      tags: ["Next.js", "MongoDB", "NextAuth", "Tailwind"],
       repo: "https://github.com/devAbdiT/DevFlow",
       demo: "",
       image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900"
     },
     {
-      id: 6,
-      title: "Dice Game",
-      description: "A fun and interactive classic dice game built beautifully with pure web properties.",
-      tags: ["CSS", "JavaScript", "HTML"],
-      repo: "https://github.com/devAbdiT/Dice-game",
-      demo: "https://joyful-hotteok-3a466c.netlify.app/",
+      id: 3,
+      title: "Lumins Shop (E-commerce)",
+      description: "A modern e-commerce platform featuring product browsing, shopping cart, and wishlist functionality with Redux Toolkit for state management.",
+      tags: ["React", "Redux", "Tailwind", "TypeScript"],
+      repo: "https://github.com/devAbdiT/Lumina-Shop",
+      demo: "https://lumina-shop-wine.vercel.app/",
+      image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900"
+    },
+    {
+      id: 4,
+      title: "Modern Management Dashboard",
+      description: "A high-performance dashboard featuring Server-Side Rendering (SSR) for optimized SEO and data fetching. Fully responsive UI.",
+      tags: ["Next.js", "App Router", "Tailwind CSS"],
+      repo: "https://github.com/devAbdiT/DashBoard",
+      demo: "https://dash-board-rose.vercel.app/",
+      image: "bg-gradient-to-br from-primary-900 via-slate-800 to-slate-950"
+    },
+    {
+      id: 5,
+      title: "Global Weather Application",
+      description: "Real-time weather tracking tool integrating with external APIs to provide live data for cities worldwide with dynamic styling.",
+      tags: ["JavaScript", "Fetch API", "CSS"],
+      repo: "https://github.com/devAbdiT",
+      demo: "",
       image: "bg-gradient-to-br from-slate-900 via-slate-800 to-secondary-950"
+    },
+    {
+      id: 6,
+      title: "Full-Stack Job Portal",
+      description: "Platform for job listings and applications, focusing on database schema design, CRUD operations, and search functionality.",
+      tags: ["PHP", "MySQL", "JavaScript"],
+      repo: "https://github.com/devAbdiT",
+      demo: "",
+      image: "bg-gradient-to-r from-primary-950 via-secondary-900 to-slate-900"
     }
   ];
 
