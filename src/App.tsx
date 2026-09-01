@@ -12,10 +12,12 @@ import { Cursor } from './components/Cursor';
 import { ScrollProgress } from './components/ScrollProgress';
 import { KeyboardNavigation } from './components/KeyboardNavigation';
 import { TerminalOverlay } from './components/TerminalOverlay';
+import { DynamicTitle } from './components/DynamicTitle';
 
 export default function App() {
   return (
     <>
+      <DynamicTitle />
       <TerminalOverlay />
       <KeyboardNavigation />
       <ScrollProgress />
