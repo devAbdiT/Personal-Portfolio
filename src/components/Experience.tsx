@@ -1,5 +1,6 @@
 import { Briefcase, GraduationCap, ArrowRight, Download } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Tooltip } from './Tooltip';
 
 export function Experience() {
   const experiences = [
@@ -8,21 +9,24 @@ export function Experience() {
       title: "Software Engineering Student",
       organization: "Jimma University",
       date: "Present (3rd Year)",
-      description: "Dedicated student with a strong focus on frontend web development, currently expanding skill set into backend development."
+      description: "Dedicated student with a strong focus on frontend web development, currently expanding skill set into backend development.",
+      tooltip: "Current 3rd Year Student"
     },
     {
       type: 'edu',
       title: "BSc in Software Engineering",
       organization: "Jimma University, Ethiopia",
       date: "Expected 2027/28",
-      description: "Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming (Java/C++), Database Management Systems, Web Programming."
+      description: "Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming (Java/C++), Database Management Systems, Web Programming.",
+      tooltip: "Expected Graduation: 2028"
     },
     {
       type: 'edu',
       title: "ALX ProDev Frontend Certificate",
       organization: "ALX Africa",
       date: "Completed",
-      description: "Successfully completed rigorous professional training in Frontend Development, specializing in React, Next.js, and modern architectural practices."
+      description: "Successfully completed rigorous professional training in Frontend Development, specializing in React, Next.js, and modern architectural practices.",
+      tooltip: "Intensive Frontend Program"
     }
   ];
 
@@ -88,7 +92,9 @@ export function Experience() {
                     </div>
 
                     <h3 className="text-xl font-bold font-display text-slate-100 mb-1">{exp.title}</h3>
-                    <h4 className="text-secondary-400 font-medium text-sm mb-4">{exp.organization}</h4>
+                    <Tooltip content={exp.tooltip}>
+                      <h4 className="text-secondary-400 font-medium text-sm mb-4 cursor-default">{exp.organization}</h4>
+                    </Tooltip>
                     
                     <p className="text-slate-400 text-sm leading-relaxed">
                       {exp.description}

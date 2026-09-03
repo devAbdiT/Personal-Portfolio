@@ -1,6 +1,7 @@
 import { Code2, Database, Layout, Terminal } from 'lucide-react';
 import { motion } from 'motion/react';
 import { TiltCard } from './TiltCard';
+import { Tooltip } from './Tooltip';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiTailwindcss, 
   SiShadcnui, SiReacthookform, SiSocketdotio, SiPostgresql, SiMongodb, 
@@ -17,15 +18,15 @@ export function Skills() {
       color: "text-primary-400",
       glow: "rgba(var(--primary-glow), 0.5)",
       skills: [
-        { name: 'React', icon: SiReact },
-        { name: 'Next.js', icon: SiNextdotjs },
-        { name: 'JavaScript', icon: SiJavascript },
-        { name: 'Tailwind', icon: SiTailwindcss },
-        { name: 'HTML', icon: FaHtml5 },
-        { name: 'CSS', icon: FaCss3Alt },
-        { name: 'shadcn', icon: SiShadcnui },
-        { name: 'React Hook Form', icon: SiReacthookform },
-        { name: 'Socket.io', icon: SiSocketdotio }
+        { name: 'React', icon: SiReact, detail: 'v18+, 2+ years' },
+        { name: 'Next.js', icon: SiNextdotjs, detail: 'v14, App Router' },
+        { name: 'JavaScript', icon: SiJavascript, detail: 'ES6+' },
+        { name: 'Tailwind', icon: SiTailwindcss, detail: 'v3.4' },
+        { name: 'HTML', icon: FaHtml5, detail: 'HTML5 Semantic' },
+        { name: 'CSS', icon: FaCss3Alt, detail: 'CSS3, Flexbox/Grid' },
+        { name: 'shadcn', icon: SiShadcnui, detail: 'UI Components' },
+        { name: 'React Hook Form', icon: SiReacthookform, detail: 'Form Validation' },
+        { name: 'Socket.io', icon: SiSocketdotio, detail: 'Real-time sync' }
       ]
     },
     {
@@ -34,9 +35,9 @@ export function Skills() {
       color: "text-secondary-400",
       glow: "rgba(var(--secondary-glow), 0.5)",
       skills: [
-        { name: 'PostgreSQL', icon: SiPostgresql },
-        { name: 'MongoDB', icon: SiMongodb },
-        { name: 'MySQL', icon: SiMysql }
+        { name: 'PostgreSQL', icon: SiPostgresql, detail: 'Relational DB' },
+        { name: 'MongoDB', icon: SiMongodb, detail: 'NoSQL DB' },
+        { name: 'MySQL', icon: SiMysql, detail: 'Relational DB' }
       ]
     },
     {
@@ -45,9 +46,9 @@ export function Skills() {
       color: "text-emerald-400",
       glow: "rgba(52, 211, 153, 0.5)",
       skills: [
-        { name: 'Java', icon: FaJava },
-        { name: 'C++', icon: SiCplusplus },
-        { name: 'JavaScript', icon: SiJavascript }
+        { name: 'Java', icon: FaJava, detail: 'OOP, Academic' },
+        { name: 'C++', icon: SiCplusplus, detail: 'Academic' },
+        { name: 'JavaScript', icon: SiJavascript, detail: 'Core Language' }
       ]
     },
     {
@@ -56,8 +57,8 @@ export function Skills() {
       color: "text-purple-400",
       glow: "rgba(192, 132, 252, 0.5)",
       skills: [
-        { name: 'GitHub', icon: SiGithub },
-        { name: 'VS Code', icon: VscVscode }
+        { name: 'GitHub', icon: SiGithub, detail: 'Version Control' },
+        { name: 'VS Code', icon: VscVscode, detail: 'Primary Editor' }
       ]
     }
   ];
@@ -115,14 +116,15 @@ export function Skills() {
                   
                   <div className="flex flex-wrap gap-2 mt-auto" style={{ transform: "translateZ(20px)" }}>
                     {group.skills.map(skill => (
-                      <span 
-                        key={skill.name} 
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-slate-300 bg-slate-950/50 border border-white/10 rounded-md hover:text-primary-300 hover:border-primary-500/50 transition-colors"
-                      >
-                        {/* @ts-ignore - className is valid for react-icons */}
-                        <skill.icon className="w-3.5 h-3.5" />
-                        {skill.name}
-                      </span>
+                      <Tooltip key={skill.name} content={skill.detail}>
+                        <span 
+                          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-slate-300 bg-slate-950/50 border border-white/10 rounded-md hover:text-primary-300 hover:border-primary-500/50 transition-colors cursor-default"
+                        >
+                          {/* @ts-ignore - className is valid for react-icons */}
+                          <skill.icon className="w-3.5 h-3.5" />
+                          {skill.name}
+                        </span>
+                      </Tooltip>
                     ))}
                   </div>
                 </div>

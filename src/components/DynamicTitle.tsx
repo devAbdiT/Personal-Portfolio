@@ -23,8 +23,9 @@ export function DynamicTitle() {
         let activeId = '';
         
         Object.entries(ratios.current).forEach(([id, ratio]) => {
-          if (ratio > maxRatio) {
-            maxRatio = ratio;
+          const numRatio = ratio as number;
+          if (numRatio > maxRatio) {
+            maxRatio = numRatio;
             activeId = id;
           }
         });
