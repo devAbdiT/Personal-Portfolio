@@ -1,11 +1,13 @@
 import { motion, useMotionValue, useSpring, useTransform, useMotionTemplate } from 'motion/react';
 import { useEffect } from 'react';
+import { usePowerMode } from '../contexts/PowerModeContext';
 
 export function Background() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const mousePixelX = useMotionValue(-1000);
   const mousePixelY = useMotionValue(-1000);
+  const { powerSaving } = usePowerMode();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -40,6 +42,28 @@ export function Background() {
   const overlayGridY = useTransform(smoothY, [-0.5, 0.5], ['-20px', '20px']);
 
   const backgroundGradient = useMotionTemplate`radial-gradient(800px circle at ${smoothPixelX}px ${smoothPixelY}px, rgba(var(--primary-glow), 0.15), transparent 80%)`;
+
+  if (powerSaving) {
+    return (
+      <div className="fixed inset-0 z-[-1] bg-slate-950 overflow-hidden">
+        {/* Static Grid Floor */}
+        <div 
+          className="absolute inset-[-50%] opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(var(--secondary-glow), 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(var(--primary-glow), 0.2) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px',
+            transform: 'rotateX(75deg) translateZ(-200px) translateY(-20%) scale(2.5)',
+            transformOrigin: 'top center'
+          }}
+        />
+        {/* Simple Ambient Lights */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-950/20 to-secondary-950/20" />
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-[-1] bg-slate-950 overflow-hidden perspective-1000">

@@ -1,5 +1,6 @@
 import React, { ReactNode, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { usePowerMode } from '../contexts/PowerModeContext';
 
 interface TiltCardProps {
   children: ReactNode;
@@ -9,6 +10,7 @@ interface TiltCardProps {
 
 export function TiltCard({ children, className = '' }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const { powerSaving } = usePowerMode();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -19,7 +21,7 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+    if (!ref.current || powerSaving) return;
     const rect = ref.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
@@ -30,6 +32,7 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
   };
 
   const handleMouseLeave = () => {
+    if (powerSaving) return;
     x.set(0);
     y.set(0);
   };
@@ -39,7 +42,7 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      style={powerSaving ? {} : { rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={`perspective-1000 ${className}`}
     >
       {children}

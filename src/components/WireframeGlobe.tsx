@@ -1,10 +1,13 @@
 import { motion } from 'motion/react';
+import { usePowerMode } from '../contexts/PowerModeContext';
 
 export function WireframeGlobe() {
+  const { powerSaving } = usePowerMode();
+
   return (
     <div className="relative w-64 h-64 md:w-96 md:h-96 perspective-1000 drop-shadow-[0_0_30px_rgba(var(--primary-glow),0.4)]">
       <motion.div
-        animate={{ rotateY: 360, rotateX: 180 }}
+        animate={powerSaving ? { rotateY: 20, rotateX: 10 } : { rotateY: 360, rotateX: 180 }}
         transition={{ duration: 25, ease: "linear", repeat: Infinity }}
         className="w-full h-full relative preserve-3d"
       >

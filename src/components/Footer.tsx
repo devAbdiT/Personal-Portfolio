@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Activity, Cpu, Palette } from 'lucide-react';
+import { Activity, Cpu, Palette, Battery, BatteryCharging } from 'lucide-react';
+import { usePowerMode } from '../contexts/PowerModeContext';
 
 export function Footer() {
   const [latency, setLatency] = useState(12);
   const [load, setLoad] = useState('Low');
+  const { powerSaving, togglePowerSaving } = usePowerMode();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,6 +43,18 @@ export function Footer() {
           <Palette size={14} className="text-secondary-500/70 group-hover:text-secondary-400 transition-colors" />
           <span className="group-hover:text-slate-300 transition-colors">THEME: ACTIVE</span>
         </div>
+
+        <button 
+          onClick={togglePowerSaving}
+          className="flex items-center gap-2 group cursor-pointer hover:text-slate-300 transition-colors outline-none"
+        >
+          {powerSaving ? (
+            <Battery size={14} className="text-amber-500" />
+          ) : (
+            <BatteryCharging size={14} className="text-emerald-500/70 group-hover:text-emerald-400 transition-colors" />
+          )}
+          <span>PWR SAVE: {powerSaving ? 'ON' : 'OFF'}</span>
+        </button>
       </div>
     </footer>
   );
