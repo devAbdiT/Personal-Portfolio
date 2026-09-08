@@ -43,6 +43,9 @@ export function Background() {
 
   const backgroundGradient = useMotionTemplate`radial-gradient(800px circle at ${smoothPixelX}px ${smoothPixelY}px, rgba(var(--primary-glow), 0.15), transparent 80%)`;
 
+  const particleX = useTransform(smoothX, [-0.5, 0.5], ['-3%', '3%']);
+  const particleY = useTransform(smoothY, [-0.5, 0.5], ['-3%', '3%']);
+
   if (powerSaving) {
     return (
       <div className="fixed inset-0 z-[-1] bg-slate-950 overflow-hidden">
@@ -112,8 +115,8 @@ export function Background() {
       {/* Particle Streams */}
       <motion.div
         style={{ 
-          x: useTransform(smoothX, [-0.5, 0.5], ['-3%', '3%']), 
-          y: useTransform(smoothY, [-0.5, 0.5], ['-3%', '3%']) 
+          x: particleX, 
+          y: particleY 
         }}
         className="absolute inset-0 pointer-events-none preserve-3d"
       >
