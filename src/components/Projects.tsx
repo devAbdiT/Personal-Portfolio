@@ -42,21 +42,12 @@ export function Projects() {
     },
     {
       id: 5,
-      title: "Global Weather Application",
-      description: "Real-time weather tracking tool integrating with external APIs to provide live data for cities worldwide with dynamic styling.",
-      tags: ["JavaScript", "Fetch API", "CSS"],
+      title: "Habit Tracker",
+      description: "A productivity tool to monitor daily habits and goals with visual progress tracking and real-time updates.",
+      tags: ["React", "TypeScript", "Tailwind", "LocalStorage"],
       repo: "https://github.com/devAbdiT",
       demo: "",
       image: "bg-gradient-to-br from-slate-900 via-slate-800 to-secondary-950"
-    },
-    {
-      id: 6,
-      title: "Full-Stack Job Portal",
-      description: "Platform for job listings and applications, focusing on database schema design, CRUD operations, and search functionality.",
-      tags: ["PHP", "MySQL", "JavaScript"],
-      repo: "https://github.com/devAbdiT",
-      demo: "",
-      image: "bg-gradient-to-r from-primary-950 via-secondary-900 to-slate-900"
     }
   ];
 
