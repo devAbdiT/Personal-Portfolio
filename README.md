@@ -4,8 +4,7 @@
 
 A modern, highly interactive, and performant 3D developer portfolio built to showcase my technical skills, projects, and experience as a Frontend Engineer.
 
-## 🚀 Live Demo
-**[View Live Portfolio](https://abdi-tadesse-portfolio.vercel.app/)** *(Replace with actual deployed URL)*
+
 
 ## ✨ Key Features
 - **3D & Interactive UI**: Fluid physics, tilting project cards, and a rotating wireframe globe using `framer-motion` and custom React hooks.
@@ -30,25 +29,6 @@ A modern, highly interactive, and performant 3D developer portfolio built to sho
 - `src/index.css` - Global Tailwind imports and custom scrollbar hiding
 - `public/` - Static assets including `resume.pdf`
 
-## 💻 Run Locally
-
-**Prerequisites:** Node.js (v18+)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/devAbdiT/portfolio.git
-   cd portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
 
 ## 📬 Contact
 - **Email**: [abditadesse89@gmail.com](mailto:abditadesse89@gmail.com)
