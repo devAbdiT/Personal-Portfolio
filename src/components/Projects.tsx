@@ -33,15 +33,6 @@ export function Projects() {
     },
     {
       id: 4,
-      title: "Modern Management Dashboard",
-      description: "A high-performance dashboard featuring Server-Side Rendering (SSR) for optimized SEO and data fetching. Fully responsive UI.",
-      tags: ["Next.js", "App Router", "Tailwind CSS"],
-      repo: "https://github.com/devAbdiT/DashBoard",
-      demo: "https://dash-board-rose.vercel.app/",
-      image: "bg-gradient-to-br from-primary-900 via-slate-800 to-slate-950"
-    },
-    {
-      id: 5,
       title: "Habit Tracker",
       description: "A productivity tool to monitor daily habits and goals with visual progress tracking and real-time updates.",
       tags: ["React", "TypeScript", "Tailwind", "LocalStorage"],
