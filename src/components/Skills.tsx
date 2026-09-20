@@ -1,11 +1,12 @@
-import { Code2, Database, Layout, Terminal } from 'lucide-react';
+import { Code2, Layout, Terminal, Server, ShieldCheck, Globe } from 'lucide-react';
 import { motion } from 'motion/react';
 import { TiltCard } from './TiltCard';
 import { Tooltip } from './Tooltip';
 import { 
-  SiReact, SiNextdotjs, SiJavascript, SiTailwindcss, 
-  SiShadcnui, SiReacthookform, SiSocketdotio, SiPostgresql, SiMongodb, 
-  SiMysql, SiCplusplus, SiGithub 
+  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, 
+  SiRedux, SiShadcnui, SiReacthookform, SiNodedotjs, SiPrisma, 
+  SiSocketdotio, SiPostgresql, SiMongodb, SiMysql, SiPhp, SiCplusplus, 
+  SiGit, SiGithub 
 } from 'react-icons/si';
 import { FaJava, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { VscVscode } from 'react-icons/vsc';
@@ -13,31 +14,33 @@ import { VscVscode } from 'react-icons/vsc';
 export function Skills() {
   const skillGroups = [
     {
-      title: "Frontend Engineering",
+      title: "Frontend",
       icon: Layout,
       color: "text-primary-400",
       glow: "rgba(var(--primary-glow), 0.5)",
       skills: [
-        { name: 'React', icon: SiReact, detail: 'v18+, 2+ years' },
-        { name: 'Next.js', icon: SiNextdotjs, detail: 'v14, App Router' },
-        { name: 'JavaScript', icon: SiJavascript, detail: 'ES6+' },
-        { name: 'Tailwind', icon: SiTailwindcss, detail: 'v3.4' },
-        { name: 'HTML', icon: FaHtml5, detail: 'HTML5 Semantic' },
-        { name: 'CSS', icon: FaCss3Alt, detail: 'CSS3, Flexbox/Grid' },
-        { name: 'shadcn', icon: SiShadcnui, detail: 'UI Components' },
+        { name: 'React', icon: SiReact, detail: 'v18+, Hooks & Context' },
+        { name: 'Next.js', icon: SiNextdotjs, detail: 'v14, App Router, SSR' },
+        { name: 'Redux Toolkit', icon: SiRedux, detail: 'Global State Management' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, detail: 'Responsive Design' },
+        { name: 'shadcn/ui', icon: SiShadcnui, detail: 'Accessible Components' },
         { name: 'React Hook Form', icon: SiReacthookform, detail: 'Form Validation' },
-        { name: 'Socket.io', icon: SiSocketdotio, detail: 'Real-time sync' }
+        { name: 'HTML5', icon: FaHtml5, detail: 'Semantic HTML5' },
+        { name: 'CSS3', icon: FaCss3Alt, detail: 'Modern Flexbox & Grid' }
       ]
     },
     {
-      title: "Databases",
-      icon: Database,
+      title: "Backend & Database",
+      icon: Server,
       color: "text-secondary-400",
       glow: "rgba(var(--secondary-glow), 0.5)",
       skills: [
-        { name: 'PostgreSQL', icon: SiPostgresql, detail: 'Relational DB' },
-        { name: 'MongoDB', icon: SiMongodb, detail: 'NoSQL DB' },
-        { name: 'MySQL', icon: SiMysql, detail: 'Relational DB' }
+        { name: 'Node.js', icon: SiNodedotjs, detail: 'Backend Runtime' },
+        { name: 'Prisma ORM', icon: SiPrisma, detail: 'Type-Safe ORM' },
+        { name: 'PostgreSQL', icon: SiPostgresql, detail: 'Relational Database' },
+        { name: 'MongoDB', icon: SiMongodb, detail: 'NoSQL Database' },
+        { name: 'MySQL', icon: SiMysql, detail: 'Relational Database' },
+        { name: 'Socket.io', icon: SiSocketdotio, detail: 'Real-time WebSockets' }
       ]
     },
     {
@@ -46,19 +49,24 @@ export function Skills() {
       color: "text-emerald-400",
       glow: "rgba(52, 211, 153, 0.5)",
       skills: [
-        { name: 'Java', icon: FaJava, detail: 'OOP, Academic' },
-        { name: 'C++', icon: SiCplusplus, detail: 'Academic' },
-        { name: 'JavaScript', icon: SiJavascript, detail: 'Core Language' }
+        { name: 'TypeScript', icon: SiTypescript, detail: 'Type-Safe JavaScript' },
+        { name: 'JavaScript', icon: SiJavascript, detail: 'ES6+ Core' },
+        { name: 'Java', icon: FaJava, detail: 'OOP, Data Structures' },
+        { name: 'C++', icon: SiCplusplus, detail: 'Algorithms & Performance' },
+        { name: 'PHP', icon: SiPhp, detail: 'Server-Side Scripting' }
       ]
     },
     {
-      title: "Development Tools",
+      title: "Tools & Concepts",
       icon: Terminal,
       color: "text-purple-400",
       glow: "rgba(192, 132, 252, 0.5)",
       skills: [
-        { name: 'GitHub', icon: SiGithub, detail: 'Version Control' },
-        { name: 'VS Code', icon: VscVscode, detail: 'Primary Editor' }
+        { name: 'Git', icon: SiGit, detail: 'Version Control' },
+        { name: 'GitHub', icon: SiGithub, detail: 'Collaboration & Repos' },
+        { name: 'VS Code', icon: VscVscode, detail: 'Primary Editor' },
+        { name: 'REST APIs', icon: Globe, detail: 'API Integration' },
+        { name: 'Auth & RBAC', icon: ShieldCheck, detail: 'NextAuth, Better Auth, Roles' }
       ]
     }
   ];
