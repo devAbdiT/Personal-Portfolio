@@ -87,7 +87,8 @@ export function Hero() {
                   View Work
                 </motion.a>
                 <motion.a 
-                  href="/resume.pdf"
+                  href="/Abdi_Tadesse_FullStack_Resume.pdf"
+                  download="Abdi_Tadesse_FullStack_Resume.pdf"
                   target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

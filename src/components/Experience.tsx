@@ -117,7 +117,8 @@ export function Experience() {
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="/resume.pdf" 
+              href="/Abdi_Tadesse_FullStack_Resume.pdf" 
+              download="Abdi_Tadesse_FullStack_Resume.pdf"
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-slate-900 border border-secondary-500/50 text-secondary-400 rounded-full font-mono text-xs uppercase tracking-widest hover:bg-secondary-950/30 hover:shadow-[0_0_20px_rgba(var(--secondary-glow),0.4)] transition-all group"

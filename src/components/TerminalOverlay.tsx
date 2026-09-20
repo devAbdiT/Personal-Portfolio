@@ -63,6 +63,7 @@ export function TerminalOverlay() {
             <span>  <span className="text-primary-400">projects</span>   - Navigate to Projects</span>
             <span>  <span className="text-primary-400">experience</span> - Navigate to Experience</span>
             <span>  <span className="text-primary-400">contact</span>    - Navigate to Contact</span>
+            <span>  <span className="text-primary-400">resume</span>     - View / download resume</span>
             <span>  <span className="text-primary-400">clear</span>      - Clear terminal</span>
             <span>  <span className="text-primary-400">exit</span>       - Close terminal</span>
           </div>
@@ -76,6 +77,11 @@ export function TerminalOverlay() {
         return;
       case 'whoami':
         output = 'Abdi Tadesse — Frontend Engineer. Loc: Addis Abeba, Ethiopia.';
+        break;
+      case 'resume':
+      case 'cv':
+        window.open('/Abdi_Tadesse_FullStack_Resume.pdf', '_blank');
+        output = 'Opening Abdi_Tadesse_FullStack_Resume.pdf...';
         break;
       case 'skills':
       case 'projects':
