@@ -6,8 +6,8 @@ export function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Appointment Scheduling System",
-      description: "Full-stack web application digitizing hospital appointment booking with real-time doctor availability, role-based access, and queue management.",
+      title: "MediCare (Hospital Management System)",
+      description: "Full-stack hospital management system with real-time doctor availability, queue management with token numbers, and role-based access control.",
       tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
       repo: "https://github.com/devAbdiT/MediCare",
       demo: "https://medi-care-tan-seven.vercel.app/",
