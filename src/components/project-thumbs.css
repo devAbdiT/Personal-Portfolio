@@ -1,0 +1,114 @@
+/* ------------------------------------------------------------------
+   project-thumbs.css
+
+   Colors for the three project pictures (MediCare, DevOverflow, Lumins Shop).
+
+   HOW IT WORKS (plain words):
+   - Each picture only uses 7 "crayon slots": bg, surface, line, primary,
+     soft, secondary, accent.
+   - Each theme (Electric, Crimson, ...) says which color goes in each slot.
+   - When your theme switcher changes the theme, the slots change color,
+     and the pictures repaint themselves automatically.
+
+   IMPORTANT: this file assumes your switcher sets  data-theme="matrix"
+   on the <html> element (or any parent of the pictures).
+   If yours uses a class instead (e.g. <html class="matrix">), change
+   [data-theme="matrix"] below to .matrix  (same for the other themes).
+   ------------------------------------------------------------------ */
+
+/* Default colors (Electric). Used when no theme is set yet. */
+:root {
+  --thumb-bg: #0d1030;        /* picture background          */
+  --thumb-surface: #161c4a;   /* cards and panels            */
+  --thumb-line: #3b4aa8;      /* borders and soft bars       */
+  --thumb-primary: #6366f1;   /* main shapes                 */
+  --thumb-soft: #8aa0ff;      /* light tint of the primary   */
+  --thumb-secondary: #22d3ee; /* second main color           */
+  --thumb-accent: #f4577a;    /* hearts, badges, highlights  */
+}
+
+/* TIP: if your site already has theme variables (for example --primary),
+   you can skip the palettes below and just point to them:
+   --thumb-primary: hsl(var(--primary));                                 */
+
+[data-theme="electric"] {
+  --thumb-bg: #0d1030;
+  --thumb-surface: #161c4a;
+  --thumb-line: #3b4aa8;
+  --thumb-primary: #6366f1;
+  --thumb-soft: #8aa0ff;
+  --thumb-secondary: #22d3ee;
+  --thumb-accent: #f4577a;
+}
+
+[data-theme="crimson"] {
+  --thumb-bg: #1a0b10;
+  --thumb-surface: #2a1119;
+  --thumb-line: #7f2a3f;
+  --thumb-primary: #e5484d;
+  --thumb-soft: #ff9a8a;
+  --thumb-secondary: #ff9f43;
+  --thumb-accent: #ffd166;
+}
+
+[data-theme="matrix"] {
+  --thumb-bg: #06140b;
+  --thumb-surface: #0b2415;
+  --thumb-line: #1f6b3a;
+  --thumb-primary: #22c55e;
+  --thumb-soft: #86efac;
+  --thumb-secondary: #a3e635;
+  --thumb-accent: #fde047;
+}
+
+[data-theme="sunset"] {
+  --thumb-bg: #1a0d17;
+  --thumb-surface: #2a1425;
+  --thumb-line: #8a3a5c;
+  --thumb-primary: #fb7185;
+  --thumb-soft: #fdba74;
+  --thumb-secondary: #f97316;
+  --thumb-accent: #fbbf24;
+}
+
+[data-theme="abyss"] {
+  --thumb-bg: #060d1c;
+  --thumb-surface: #0c1a33;
+  --thumb-line: #1e4a8a;
+  --thumb-primary: #3b82f6;
+  --thumb-soft: #93c5fd;
+  --thumb-secondary: #38bdf8;
+  --thumb-accent: #2dd4bf;
+}
+
+[data-theme="synthetic"] {
+  --thumb-bg: #12081f;
+  --thumb-surface: #1f0f33;
+  --thumb-line: #6b2d8f;
+  --thumb-primary: #c026d3;
+  --thumb-soft: #e879f9;
+  --thumb-secondary: #8b5cf6;
+  --thumb-accent: #22d3ee;
+}
+
+/* ---- Color classes used inside the SVG pictures ---- */
+.thumb .fill-bg        { fill: var(--thumb-bg); }
+.thumb .fill-surface   { fill: var(--thumb-surface); }
+.thumb .fill-line      { fill: var(--thumb-line); }
+.thumb .fill-primary   { fill: var(--thumb-primary); }
+.thumb .fill-soft      { fill: var(--thumb-soft); }
+.thumb .fill-secondary { fill: var(--thumb-secondary); }
+.thumb .fill-accent    { fill: var(--thumb-accent); }
+
+.thumb .stroke-line      { stroke: var(--thumb-line); }
+.thumb .stroke-secondary { stroke: var(--thumb-secondary); }
+.thumb .stroke-soft      { stroke: var(--thumb-soft); }
+.thumb .stroke-bg        { stroke: var(--thumb-bg); }
+
+/* Makes a shape fainter (used for the quiet rows and bars) */
+.thumb .dim { opacity: 0.4; }
+
+/* Smooth color change when the theme switches */
+.thumb * {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}

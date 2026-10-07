@@ -1,6 +1,7 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { TiltCard } from './TiltCard';
 import { motion } from 'motion/react';
+import { MediCareThumb, DevOverflowThumb, LuminsShopThumb } from './ProjectThumbs';
 
 export function Projects() {
   const projects = [
@@ -12,7 +13,7 @@ export function Projects() {
       repo: "https://github.com/devAbdiT/MediCare",
       demo: "https://medi-care-tan-seven.vercel.app/",
       image: "bg-gradient-to-b from-slate-800 via-slate-900 to-primary-950",
-      imageUrl: "/medicare_hospital_card.svg"
+      ThumbComponent: MediCareThumb
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ export function Projects() {
       repo: "https://github.com/devAbdiT/DevFlow",
       demo: "",
       image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900",
-      imageUrl: "/devoverflow_qa_card.png"
+      ThumbComponent: DevOverflowThumb
     },
     {
       id: 3,
@@ -32,7 +33,7 @@ export function Projects() {
       repo: "https://github.com/devAbdiT/Lumina-Shop",
       demo: "https://lumina-shop-wine.vercel.app/",
       image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900",
-      imageUrl: "/lumins_shop_ecommerce_card.png"
+      ThumbComponent: LuminsShopThumb
     },
     {
       id: 4,
@@ -91,13 +92,11 @@ export function Projects() {
                     
                     {/* 3D Extruded Top Image simulation */}
                     <div 
-                      className={`h-48 w-full ${project.image} relative isolate bg-cover bg-top`} 
-                      style={{ 
-                        transform: "translateZ(30px)",
-                        ...(project.imageUrl ? { backgroundImage: `url(${project.imageUrl})` } : {})
-                      }}
+                      className={`h-48 w-full ${project.image} relative isolate overflow-hidden`} 
+                      style={{ transform: "translateZ(30px)" }}
                     >
-                      <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay" />
+                      {project.ThumbComponent && <project.ThumbComponent />}
+                      <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay pointer-events-none" />
                       
                       {/* Floating abstract code/nodes */}
                       <div className="absolute bottom-4 left-4 flex gap-2">
