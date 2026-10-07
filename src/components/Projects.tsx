@@ -11,7 +11,8 @@ export function Projects() {
       tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
       repo: "https://github.com/devAbdiT/MediCare",
       demo: "https://medi-care-tan-seven.vercel.app/",
-      image: "bg-gradient-to-b from-slate-800 via-slate-900 to-primary-950"
+      image: "bg-gradient-to-b from-slate-800 via-slate-900 to-primary-950",
+      imageUrl: "/medicare_hospital_card.svg"
     },
     {
       id: 2,
@@ -20,7 +21,8 @@ export function Projects() {
       tags: ["Next.js", "MongoDB", "NextAuth", "Tailwind"],
       repo: "https://github.com/devAbdiT/DevFlow",
       demo: "",
-      image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900"
+      image: "bg-gradient-to-tl from-slate-900 via-slate-800 to-primary-900",
+      imageUrl: "/devoverflow_qa_card.png"
     },
     {
       id: 3,
@@ -29,7 +31,8 @@ export function Projects() {
       tags: ["React", "Redux", "Tailwind", "TypeScript"],
       repo: "https://github.com/devAbdiT/Lumina-Shop",
       demo: "https://lumina-shop-wine.vercel.app/",
-      image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900"
+      image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900",
+      imageUrl: "/lumins_shop_ecommerce_card.png"
     },
     {
       id: 4,
@@ -88,8 +91,11 @@ export function Projects() {
                     
                     {/* 3D Extruded Top Image simulation */}
                     <div 
-                      className={`h-48 w-full ${project.image} relative isolate`} 
-                      style={{ transform: "translateZ(30px)" }}
+                      className={`h-48 w-full ${project.image} relative isolate bg-cover bg-top`} 
+                      style={{ 
+                        transform: "translateZ(30px)",
+                        ...(project.imageUrl ? { backgroundImage: `url(${project.imageUrl})` } : {})
+                      }}
                     >
                       <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity mix-blend-overlay" />
                       
