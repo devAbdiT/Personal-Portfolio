@@ -195,3 +195,78 @@ export function LuminsShopThumb() {
     </svg>
   );
 }
+
+/* ------------------------------------------------------------------
+   4) Habit Tracker: a calendar grid with completed days and a chart
+------------------------------------------------------------------- */
+export function HabitTrackerThumb() {
+  return (
+    <svg {...svgProps} role="img" aria-label="A habit tracker calendar grid with a progress line chart">
+      <rect className="fill-bg" width="680" height="411" />
+
+      {/* Main dashboard panel */}
+      <rect className="fill-surface stroke-line" x="40" y="40" width="380" height="330" rx="12" strokeWidth="1" />
+      
+      {/* Header of dashboard */}
+      <rect className="fill-line" x="70" y="70" width="120" height="12" rx="4" />
+      <rect className="fill-soft" x="320" y="66" width="70" height="20" rx="10" />
+
+      {/* Calendar grid: 4 columns, 5 rows */}
+      <g transform="translate(70, 110)">
+        {/* Row 1 */}
+        <rect className="fill-line dim" x="0" y="0" width="40" height="40" rx="8" />
+        <rect className="fill-primary" x="55" y="0" width="40" height="40" rx="8" />
+        <rect className="fill-primary" x="110" y="0" width="40" height="40" rx="8" />
+        <rect className="fill-line dim" x="165" y="0" width="40" height="40" rx="8" />
+
+        {/* Row 2 */}
+        <rect className="fill-primary" x="0" y="55" width="40" height="40" rx="8" />
+        <rect className="fill-line dim" x="55" y="55" width="40" height="40" rx="8" />
+        <rect className="fill-secondary" x="110" y="55" width="40" height="40" rx="8" />
+        <rect className="fill-secondary" x="165" y="55" width="40" height="40" rx="8" />
+
+        {/* Row 3 */}
+        <rect className="fill-primary" x="0" y="110" width="40" height="40" rx="8" />
+        <rect className="fill-secondary" x="55" y="110" width="40" height="40" rx="8" />
+        <rect className="fill-accent" x="110" y="110" width="40" height="40" rx="8" />
+        <rect className="fill-line dim" x="165" y="110" width="40" height="40" rx="8" />
+
+        {/* Row 4 */}
+        <rect className="fill-line dim" x="0" y="165" width="40" height="40" rx="8" />
+        <rect className="fill-accent" x="55" y="165" width="40" height="40" rx="8" />
+        <rect className="fill-accent" x="110" y="165" width="40" height="40" rx="8" />
+        <rect className="fill-primary" x="165" y="165" width="40" height="40" rx="8" />
+      </g>
+
+      {/* Side chart panel */}
+      <rect className="fill-surface stroke-secondary" x="440" y="40" width="200" height="150" rx="12" strokeWidth="1" />
+      <rect className="fill-line" x="460" y="60" width="80" height="8" rx="4" />
+      {/* progress line chart */}
+      <path
+        className="stroke-accent"
+        d="M460 160 L490 120 L520 140 L560 90 L600 110 L620 70"
+        fill="none"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* chart nodes */}
+      <circle className="fill-bg stroke-accent" cx="490" cy="120" r="4" strokeWidth="2" />
+      <circle className="fill-bg stroke-accent" cx="520" cy="140" r="4" strokeWidth="2" />
+      <circle className="fill-bg stroke-accent" cx="560" cy="90" r="4" strokeWidth="2" />
+      <circle className="fill-bg stroke-accent" cx="600" cy="110" r="4" strokeWidth="2" />
+
+      {/* Side stats panel */}
+      <rect className="fill-surface stroke-line" x="440" y="210" width="200" height="160" rx="12" strokeWidth="1" />
+      <circle className="fill-soft" cx="480" cy="250" r="20" />
+      <circle className="fill-primary" cx="480" cy="250" r="10" />
+      <rect className="fill-line" x="520" y="240" width="90" height="8" rx="4" />
+      <rect className="fill-line" x="520" y="254" width="60" height="8" rx="4" style={{ opacity: 0.6 }} />
+
+      <circle className="fill-soft" cx="480" cy="310" r="20" />
+      <path className="fill-secondary" d="M472 310 L478 316 L488 304" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <rect className="fill-line" x="520" y="300" width="70" height="8" rx="4" />
+      <rect className="fill-line" x="520" y="314" width="50" height="8" rx="4" style={{ opacity: 0.6 }} />
+    </svg>
+  );
+}

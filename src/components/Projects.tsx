@@ -1,7 +1,7 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { TiltCard } from './TiltCard';
 import { motion } from 'motion/react';
-import { MediCareThumb, DevOverflowThumb, LuminsShopThumb } from './ProjectThumbs';
+import { MediCareThumb, DevOverflowThumb, LuminsShopThumb, HabitTrackerThumb } from './ProjectThumbs';
 
 export function Projects() {
   const projects = [
@@ -42,7 +42,8 @@ export function Projects() {
       tags: ["React", "TypeScript", "Tailwind", "LocalStorage"],
       repo: "https://github.com/devAbdiT",
       demo: "",
-      image: "bg-gradient-to-br from-slate-900 via-slate-800 to-secondary-950"
+      image: "bg-gradient-to-br from-slate-900 via-slate-800 to-secondary-950",
+      ThumbComponent: HabitTrackerThumb
     }
   ];
 
