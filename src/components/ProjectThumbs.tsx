@@ -145,9 +145,9 @@ export function DevOverflowThumb() {
 }
 
 /* ------------------------------------------------------------------
-   3) Lumins Shop: product cards with hearts, above a shopping cart
+   3) Lumina Shop: product cards with hearts, above a shopping cart
 ------------------------------------------------------------------- */
-export function LuminsShopThumb() {
+export function LuminaShopThumb() {
   return (
     <svg {...svgProps} role="img" aria-label="Product cards above a shopping cart">
       <rect className="fill-bg" width="680" height="411" />

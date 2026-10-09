@@ -1,7 +1,7 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { TiltCard } from './TiltCard';
 import { motion } from 'motion/react';
-import { MediCareThumb, DevOverflowThumb, LuminsShopThumb, HabitTrackerThumb } from './ProjectThumbs';
+import { MediCareThumb, DevOverflowThumb, LuminaShopThumb, HabitTrackerThumb } from './ProjectThumbs';
 
 export function Projects() {
   const projects = [
@@ -27,13 +27,13 @@ export function Projects() {
     },
     {
       id: 3,
-      title: "Lumins Shop (E-commerce)",
+      title: "Lumina Shop (E-commerce)",
       description: "A modern e-commerce platform featuring product browsing, shopping cart, and wishlist functionality with Redux Toolkit for state management.",
       tags: ["React", "Redux", "Tailwind", "TypeScript"],
       repo: "https://github.com/devAbdiT/Lumina-Shop",
       demo: "https://lumina-shop-wine.vercel.app/",
       image: "bg-gradient-to-tr from-secondary-900 via-slate-800 to-slate-900",
-      ThumbComponent: LuminsShopThumb
+      ThumbComponent: LuminaShopThumb
     },
     {
       id: 4,
