@@ -4,9 +4,8 @@
 
 A modern, highly interactive, and performant 3D developer portfolio built to showcase my technical skills, projects, and experience as a Frontend Engineer.
 
-
-
 ## ✨ Key Features
+
 - **3D & Interactive UI**: Fluid physics, tilting project cards, and a rotating wireframe globe using `framer-motion` and custom React hooks.
 - **Dynamic Background**: A responsive particle system and interactive spotlight that follows the user's cursor.
 - **Power Saving Mode**: A global context toggle to disable heavy 3D calculations and animations for low-end devices.
@@ -16,6 +15,7 @@ A modern, highly interactive, and performant 3D developer portfolio built to sho
 - **Performance Optimized**: Built with React, Vite, and Tailwind CSS for rapid load times and smooth 60fps animations.
 
 ## 🛠️ Tech Stack
+
 - **Framework**: React 18
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
@@ -24,15 +24,17 @@ A modern, highly interactive, and performant 3D developer portfolio built to sho
 - **Language**: TypeScript
 
 ## 📂 Project Structure
+
 - `src/components/` - Core UI components (Hero, Projects, Skills, Contact, etc.)
 - `src/contexts/` - Global state managers (e.g., PowerModeContext)
 - `src/index.css` - Global Tailwind imports and custom scrollbar hiding
 - `public/` - Static assets including `resume.pdf`
 
-
 ## 📬 Contact
+
 - **Email**: [abditadesse89@gmail.com](mailto:abditadesse89@gmail.com)
 - **GitHub**: [@devAbdiT](https://github.com/devAbdiT)
 
 ---
-*Designed and built by Abdi Tadesse*
+
+_Designed and built by Abdi Tadesse_
