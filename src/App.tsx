@@ -14,29 +14,34 @@ import { KeyboardNavigation } from './components/KeyboardNavigation';
 import { TerminalOverlay } from './components/TerminalOverlay';
 import { DynamicTitle } from './components/DynamicTitle';
 import { IntroAnimation } from './components/IntroAnimation';
+import { AudioToggle } from './components/AudioToggle';
 import { PowerModeProvider } from './contexts/PowerModeContext';
+import { AudioProvider } from './contexts/AudioContext';
 
 export default function App() {
   return (
     <PowerModeProvider>
-      <IntroAnimation />
-      <DynamicTitle />
-      <TerminalOverlay />
-      <KeyboardNavigation />
-      <ScrollProgress />
-      <Cursor />
-      <Background />
-      <SideNav />
-      <MobileNav />
-      <ThemeSwitcher />
-      <main className="pb-24 sm:pb-0 pl-0 sm:pl-32 md:pl-40 lg:pl-48 relative">
-        <Hero />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Contact />
-        <Footer />
-      </main>
+      <AudioProvider>
+        <IntroAnimation />
+        <DynamicTitle />
+        <TerminalOverlay />
+        <KeyboardNavigation />
+        <ScrollProgress />
+        <Cursor />
+        <Background />
+        <SideNav />
+        <MobileNav />
+        <ThemeSwitcher />
+        <AudioToggle />
+        <main className="pb-24 sm:pb-0 pl-0 sm:pl-32 md:pl-40 lg:pl-48 relative">
+          <Hero />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Contact />
+          <Footer />
+        </main>
+      </AudioProvider>
     </PowerModeProvider>
   );
 }

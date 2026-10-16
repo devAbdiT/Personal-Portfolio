@@ -1,12 +1,14 @@
 import { Palette } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useAudio } from '../contexts/AudioContext';
 
 type Theme = 'default' | 'crimson' | 'matrix' | 'sunset' | 'abyss' | 'synthetic';
 
 export function ThemeSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState<Theme>('default');
+  const { playThemeSwitch } = useAudio();
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -37,6 +39,7 @@ export function ThemeSwitcher() {
                 key={t.id}
                 onClick={() => {
                   setTheme(t.id);
+                  playThemeSwitch();
                   setIsOpen(false);
                 }}
                 className={`flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-all ${

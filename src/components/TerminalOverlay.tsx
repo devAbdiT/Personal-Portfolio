@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, ReactNode, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Terminal as TerminalIcon, X } from 'lucide-react';
+import { useAudio } from '../contexts/AudioContext';
 
 type CommandRecord = {
   command: string;
@@ -15,6 +16,7 @@ export function TerminalOverlay() {
   ]);
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const { playTerminalKey, playTerminalOpen, toggleSound, soundEnabled } = useAudio();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -25,18 +27,23 @@ export function TerminalOverlay() {
         ((e.ctrlKey || e.metaKey) && e.key === 'k')
       ) {
         e.preventDefault();
-        setIsOpen(prev => !prev);
+        setIsOpen(prev => {
+          const next = !prev;
+          if (next) playTerminalOpen();
+          return next;
+        });
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [playTerminalOpen]);
 
   useEffect(() => {
     if (isOpen) {
+      playTerminalOpen();
       setTimeout(() => inputRef.current?.focus(), 100);
     }
-  }, [isOpen]);
+  }, [isOpen, playTerminalOpen]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -65,10 +72,24 @@ export function TerminalOverlay() {
             <span>  <span className="text-primary-400">contact</span>    - Navigate to Contact</span>
             <span>  <span className="text-primary-400">resume</span>     - View / download resume</span>
             <span>  <span className="text-primary-400">intro</span>      - Replay cinematic intro animation</span>
+            <span>  <span className="text-primary-400">sound</span>      - Toggle Cyber audio engine (or "mute" / "unmute")</span>
             <span>  <span className="text-primary-400">clear</span>      - Clear terminal</span>
             <span>  <span className="text-primary-400">exit</span>       - Close terminal</span>
           </div>
         );
+        break;
+      case 'sound':
+      case 'audio':
+        toggleSound();
+        output = `Cyber audio engine ${!soundEnabled ? 'ENABLED [🔊]' : 'MUTED [🔇]'}.`;
+        break;
+      case 'mute':
+        if (soundEnabled) toggleSound();
+        output = 'Cyber audio engine MUTED [🔇].';
+        break;
+      case 'unmute':
+        if (!soundEnabled) toggleSound();
+        output = 'Cyber audio engine ENABLED [🔊].';
         break;
       case 'intro':
       case 'replay':
@@ -172,6 +193,9 @@ export function TerminalOverlay() {
                   type="text"
                   value={input}
                   onChange={e => setInput(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.key !== 'Enter') playTerminalKey();
+                  }}
                   className="flex-1 bg-transparent border-none outline-none text-slate-200 caret-primary-400"
                   spellCheck="false"
                   autoComplete="off"
