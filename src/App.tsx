@@ -13,11 +13,13 @@ import { ScrollProgress } from './components/ScrollProgress';
 import { KeyboardNavigation } from './components/KeyboardNavigation';
 import { TerminalOverlay } from './components/TerminalOverlay';
 import { DynamicTitle } from './components/DynamicTitle';
+import { IntroAnimation } from './components/IntroAnimation';
 import { PowerModeProvider } from './contexts/PowerModeContext';
 
 export default function App() {
   return (
     <PowerModeProvider>
+      <IntroAnimation />
       <DynamicTitle />
       <TerminalOverlay />
       <KeyboardNavigation />

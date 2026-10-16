@@ -64,10 +64,18 @@ export function TerminalOverlay() {
             <span>  <span className="text-primary-400">experience</span> - Navigate to Experience</span>
             <span>  <span className="text-primary-400">contact</span>    - Navigate to Contact</span>
             <span>  <span className="text-primary-400">resume</span>     - View / download resume</span>
+            <span>  <span className="text-primary-400">intro</span>      - Replay cinematic intro animation</span>
             <span>  <span className="text-primary-400">clear</span>      - Clear terminal</span>
             <span>  <span className="text-primary-400">exit</span>       - Close terminal</span>
           </div>
         );
+        break;
+      case 'intro':
+      case 'replay':
+        setIsOpen(false);
+        sessionStorage.removeItem('portfolio_intro_seen');
+        window.dispatchEvent(new Event('replay-intro'));
+        output = 'Replaying cinematic intro...';
         break;
       case 'clear':
         setHistory([]);
