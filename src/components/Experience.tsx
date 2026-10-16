@@ -11,7 +11,7 @@ export function Experience() {
       date: "Present (3rd Year)",
       description: "Dedicated student with a strong focus on frontend web development, currently expanding skill set into backend development.",
       tooltip: "Current 3rd Year Student",
-      activeFocus: "Docker, CI/CD & Full-Stack Architecture"
+      activeFocus: "Node.js"
     },
     {
       type: 'edu',
@@ -107,7 +107,7 @@ export function Experience() {
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75" />
                           <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-400 shadow-[0_0_8px_rgba(var(--secondary-glow),0.8)]" />
                         </span>
-                        <span className="font-mono text-xs text-secondary-400 font-semibold">Active Focus:</span>
+                        <span className="font-mono text-xs text-secondary-400 font-semibold">Currently Advancing:</span>
                         <span className="font-mono text-xs text-slate-300">{exp.activeFocus}</span>
                       </div>
                     )}

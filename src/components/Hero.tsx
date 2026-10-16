@@ -1,25 +1,11 @@
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { WireframeGlobe } from './WireframeGlobe';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Download } from 'lucide-react';
-
-const LEARNING_ITEMS = [
-  { badge: "Currently Exploring", text: "Docker & CI/CD" },
-  { badge: "Currently Building", text: "Full-Stack PostgreSQL & Prisma Apps" },
-  { badge: "What I'm Learning", text: "Cloud Deployment & DevOps" },
-];
 
 export function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const [learningIndex, setLearningIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setLearningIndex((prev) => (prev + 1) % LEARNING_ITEMS.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -84,21 +70,10 @@ export function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-400 shadow-[0_0_8px_rgba(var(--secondary-glow),0.8)]" />
                 </span>
-                <div className="text-xs font-mono text-slate-300 flex items-center overflow-hidden h-5">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={learningIndex}
-                      initial={{ opacity: 0, y: 7 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -7 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                      className="inline-flex items-center gap-1.5 whitespace-nowrap"
-                    >
-                      <span className="text-secondary-400 font-semibold">{LEARNING_ITEMS[learningIndex].badge}:</span>
-                      <span className="text-slate-200">{LEARNING_ITEMS[learningIndex].text}</span>
-                    </motion.span>
-                  </AnimatePresence>
-                </div>
+                <span className="text-xs font-mono text-slate-300 flex items-center gap-1.5">
+                  <span className="text-secondary-400 font-semibold">Currently Advancing:</span>
+                  <span className="text-slate-200">Node.js</span>
+                </span>
               </div>
             </motion.div>
             
