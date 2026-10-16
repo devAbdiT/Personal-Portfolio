@@ -1,11 +1,25 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
 import { WireframeGlobe } from './WireframeGlobe';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Download } from 'lucide-react';
+
+const LEARNING_ITEMS = [
+  { badge: "Currently Exploring", text: "Docker & CI/CD" },
+  { badge: "Currently Building", text: "Full-Stack PostgreSQL & Prisma Apps" },
+  { badge: "What I'm Learning", text: "Cloud Deployment & DevOps" },
+];
 
 export function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [learningIndex, setLearningIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLearningIndex((prev) => (prev + 1) % LEARNING_ITEMS.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -28,8 +42,8 @@ export function Hero() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
+    visible: { 
+      opacity: 1, 
       transition: { 
         staggerChildren: 0.15,
         delayChildren: 0.1
@@ -59,9 +73,33 @@ export function Hero() {
             variants={containerVariants}
             className="flex flex-col"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-slate-900/50 backdrop-blur-sm border border-primary-500/30 px-3 py-1.5 rounded-full w-max mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse shadow-[0_0_8px_rgba(var(--primary-glow),0.8)]" />
-              <span className="text-xs font-mono text-primary-400 tracking-wider">SYSTEM.ONLINE</span>
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="inline-flex items-center space-x-2 bg-slate-900/60 backdrop-blur-sm border border-primary-500/30 px-3 py-1.5 rounded-full w-max shadow-[0_0_12px_rgba(var(--primary-glow),0.15)]">
+                <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse shadow-[0_0_8px_rgba(var(--primary-glow),0.8)]" />
+                <span className="text-xs font-mono text-primary-400 tracking-wider">SYSTEM.ONLINE</span>
+              </div>
+
+              <div className="inline-flex items-center space-x-2.5 bg-slate-900/60 backdrop-blur-sm border border-secondary-500/30 hover:border-secondary-500/60 px-3.5 py-1.5 rounded-full shadow-[0_0_15px_rgba(var(--secondary-glow),0.15)] transition-all">
+                <span className="relative flex h-2 w-2 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-400 shadow-[0_0_8px_rgba(var(--secondary-glow),0.8)]" />
+                </span>
+                <div className="text-xs font-mono text-slate-300 flex items-center overflow-hidden h-5">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={learningIndex}
+                      initial={{ opacity: 0, y: 7 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -7 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="inline-flex items-center gap-1.5 whitespace-nowrap"
+                    >
+                      <span className="text-secondary-400 font-semibold">{LEARNING_ITEMS[learningIndex].badge}:</span>
+                      <span className="text-slate-200">{LEARNING_ITEMS[learningIndex].text}</span>
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
             </motion.div>
             
             <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-display font-bold leading-tight mb-4">

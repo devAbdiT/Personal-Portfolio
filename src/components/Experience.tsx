@@ -10,7 +10,8 @@ export function Experience() {
       organization: "Jimma University",
       date: "Present (3rd Year)",
       description: "Dedicated student with a strong focus on frontend web development, currently expanding skill set into backend development.",
-      tooltip: "Current 3rd Year Student"
+      tooltip: "Current 3rd Year Student",
+      activeFocus: "Docker, CI/CD & Full-Stack Architecture"
     },
     {
       type: 'edu',
@@ -99,6 +100,17 @@ export function Experience() {
                     <p className="text-slate-400 text-sm leading-relaxed">
                       {exp.description}
                     </p>
+
+                    {exp.activeFocus && (
+                      <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-2">
+                        <span className="relative flex h-2 w-2 flex-shrink-0">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75" />
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary-400 shadow-[0_0_8px_rgba(var(--secondary-glow),0.8)]" />
+                        </span>
+                        <span className="font-mono text-xs text-secondary-400 font-semibold">Active Focus:</span>
+                        <span className="font-mono text-xs text-slate-300">{exp.activeFocus}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
